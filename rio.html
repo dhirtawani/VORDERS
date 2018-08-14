@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <title>Sign-In</title>
+        <link rel="stylesheet" type="text/css" href="Styles/Stylesheet.css" />
+    </head>
+    <body>
+        <div id="wrapper">
+            <div id="banner">             
+            </div>
+            
+            <nav id="navigation">
+                <ul id="nav">
+                    <li><a href="index.php">Home</a></li>
+                    <li><a href="temp.html">Foods</a></li>
+                    <li><a href="about.html">About US</a></li>
+                    <li><a href="Sign-in.htm">Login</a></li>
+                </ul>
+            </nav>
+            
+            <div id="content_area">
+                <?php echo $content; ?>
+            </div>
+            
+            <div id="sidebar">
+                
+            </div>
+            <div id="Sign-In"> 
+			<link rel="stylesheet" type="text/css" href="style-sign.css"> 
+
+<fieldset style="width:30%"><legend>LOG-IN HERE</legend> 
+<form method="POST" action="connectivity.php"> Roll No <br>
+<input type="text" name="user" size="40"><br> Password <br>
+<input type="password" name="pass" size="40"><br> 
+<input id="button" type="submit" name="submit" value="Log-In"> 
+</form> 
+</fieldset> 
+</div> 
+            <footer>
+                <p>All rights reserved</p>
+            </footer>
+        </div>
+    </body>
+</html>

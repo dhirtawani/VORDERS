@@ -1,0 +1,165 @@
+﻿<!DOCTYPE html>
+<html>
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <title><?php echo $title; ?></title>
+        <link rel="stylesheet" type="text/css" href="Styles/Stylesheet.css" />
+    </head>
+    <body>
+        <div id="wrapper">
+            <div id="banner">             
+            </div>
+            
+            <nav id="navigation">
+                <ul id="nav">
+                    <li><a href="index.php">Home</a></li>
+                    <li><a href="menu.php">Foods</a></li>
+                    <li><a href="">About</a></li>
+                    <li><a href="Sign-in.htm">Login</a></li>
+                </ul>
+            </nav>
+            <?php
+if(isset($_POST['btn']))
+{
+if(isset($_POST['chk1']))
+{
+$one=$_POST['chk1'];
+$t_c=$_POST['coffee']*$_POST['Coffee_rate'];
+}
+else
+{
+$t_c=0;
+$one=0;
+}
+if(isset($_POST['chk2']))
+{
+$two=$_POST['chk2'];
+$t_cd=$_POST['cold_drink']*$_POST['Cold_drink_rate'];
+}
+else
+{
+$t_cd=0;
+$two=0;
+}
+if(isset($_POST['chk3']))
+{
+$three=$_POST['chk3'];
+$t_p=$_POST['Samosa']*$_POST['Samosa_rate'];
+}
+else
+{
+$t_p=0;
+$three=0;
+}
+if(isset($_POST['chk4']))
+{
+$four=$_POST['chk4'];
+$t_t=$_POST['tea']*$_POST['Tea_rate'];
+}
+else
+{
+$t_t=0;
+$four=0;
+}
+if(isset($_POST['chk5']))
+{
+$five=$_POST['chk5'];
+$t_w=$_POST['water']*$_POST['Water_rate'];
+}
+else
+{
+$t_w=0;
+$five=0;
+}
+$result=$t_c+$t_cd+$t_p+$t_t+$t_w;
+}
+
+?>
+<html>
+<head>
+<title></title>
+</head>
+<body>
+<form name="frm" action="" method="post">
+<table border="1">
+<th>Drinks</th>
+<th>Price</th>
+<th>Quantity</th>
+<th>status</th>
+<tr>
+<td>1 : Coffee </td>
+<td><input type="hidden" name="Coffee_rate" value="12" />RS:12</td>
+<td><input type="text" name="coffee" size="5" /></td>
+<td><input type="checkbox" name="chk1" value="coffee" /></td>
+</tr>
+<tr>
+<td>2 : Cold drinks </td>
+<td><input type="hidden" name="Cold_drink_rate" value="22" />RS:22</td>
+<td><input type="text" name="cold_drink" size="5" /></td>
+<td><input type="checkbox" name="chk2" value="cold drinks" />
+</td>
+</tr>
+<tr>
+<td>3 : Samosa </td>
+<td><input type="hidden" name="Samosa_rate" value="35" />RS:35</td>
+<td><input type="text" name="Samosa" size="5" /></td>
+<td><input type="checkbox" name="chk3" value="Samosa" />
+</td>
+</tr>
+<tr>
+<td>4 : Tea </td>
+<td><input type="hidden" name="Tea_rate" value="10" size="4" />RS:10</td>
+<td><input type="text" size="5" name="tea" /></td>
+<td><input type="checkbox" name="chk4" value="tea" />
+</td>
+</tr>
+<tr>
+<td>5 : Water </td>
+<td><input type="hidden" name="Water_rate" value="20" size="4" />RS:20</td>
+<td><input type="text" size="5" name="water" /></td>
+<td><input type="checkbox" name="chk5" value="water" />
+</td>
+</tr>
+<tr>
+<td colspan="4">
+<?php
+
+if(isset($_POST['chk1']))
+echo "You have choosen ".$_POST['coffee'] ." ".$one."<br>";
+if(isset($_POST['chk2']))
+echo "You have choosen ".$_POST['cold_drink'] ." ".$two."<br>";
+if(isset($_POST['chk3']))
+echo "You have choosen ".$_POST['Samosa'] ." ".$three."<br>";
+if(isset($_POST['chk4']))
+echo "You have choosen ".$_POST['tea'] ." ".$four."<br>";
+if(isset($_POST['chk5']))
+echo "You have choosen ".$_POST['water'] ." ".$five."<br>";
+?>
+</td>
+</tr>
+<tr>
+<td>Total amount</td>
+<td colspan="3"><input type="text" name="" value="<?php if(isset($result))echo "please pay "."$ ".$result;else echo "result here";?>" /></td>
+</tr>
+<tr>
+<td align="center" colspan="4"><input type="submit" name="btn" value="Summary"/>
+<input type="submit" name="btn" value="Pay" /></td>
+</tr>
+</table>
+</form>
+</body>
+</html>
+            <div id="content_area">
+                <?php echo $content; ?>
+            </div>
+            
+            <div id="sidebar">
+               
+            </div>
+            
+            <footer>
+                <p>All rights reserved</p>
+            </footer>
+        </div>
+    </body>
+</html>
